@@ -65,31 +65,35 @@
                   <a href="#"><i class="entypo-gauge"></i><span>Dashboard</span></a>
                   <ul class="visible">
                      <li class="active">
-                        <a href="#"><span>Dashboard 1</span></a>
-                     </li>
-                     <li>
-                        <a href="#"><span>Dashboard 2</span></a>
-                     </li>
-                     <li>
-                        <a href="#"><span>What's New</span><span class="badge badge-success badge-roundless">v1.1.3</span></a>
+                        <a href="#dashboard"><span>Dashboard</span></a>
                      </li>
                   </ul>
                </li>
 
                <li class="root-level has-sub">
-                  <a href="http://themes.laborator.co/neon/mailbox/main/"><i class="entypo-mail"></i><span>Mailbox</span><span class="badge badge-secondary">8</span></a>
+                  <a href="http://themes.laborator.co/neon/mailbox/main/"><i class="entypo-users"></i><span>Celebrity</span></a>
                   <ul>
                      <li>
-                        <a href="#"><i class="entypo-inbox"></i><span>Inbox</span></a>
+                        <a href="#celebrity"><i class="entypo-inbox"></i><span>Create</span></a>
                      </li>
                      <li>
-                        <a href="#"><i class="entypo-pencil"></i><span>Compose Message</span></a>
+                        <a href="#"><i class="entypo-pencil"></i><span>Upload</span></a>
                      </li>
                      <li>
-                        <a href="#"><i class="entypo-attach"></i><span>View Message</span></a>
+                        <a href="#"><i class="entypo-attach"></i><span>View/Edit</span></a>
                      </li>
                   </ul>
                </li>
+
+               <li class="root-level has-sub">
+                  <a href="http://themes.laborator.co/neon/mailbox/main/"><i class="entypo-users"></i><span>Users/Followers</span></a>
+                  <ul>
+                     <li>
+                        <a href="#celebrity"><i class="entypo-inbox"></i><span>View/Edit</span></a>
+                     </li>
+                  </ul>
+               </li>
+
             </ul>
          </div>
          <div class="main-content" style="min-height: 1416px;">
@@ -417,14 +421,6 @@
                <div class="col-md-6 col-sm-4 clearfix hidden-xs">
                   <ul class="list-inline links-list pull-right">
                      <li>
-                        <a href="http://themes.laborator.co/neon/#" data-toggle="chat" data-animate="1" data-collapse-sidebar="1">
-                        <i class="entypo-chat"></i>
-                        Chat
-                        <span class="badge badge-success chat-notifications-badge">3</span>
-                        </a>
-                     </li>
-                     <li class="sep"></li>
-                     <li>
                         <a href="{% url 'vt-login' %}">
                         Log Out <i class="entypo-logout right"></i>
                         </a>
@@ -433,7 +429,11 @@
                </div>
             </div>
             <hr>
-                        <div class="row">
+             <div id="#dashboard" >
+             <h1> Dashboard </h1>
+             </div>
+             <hr>
+             <div class="row">
                <div class="col-sm-3">
                   <div class="tile-stats tile-red">
                      <div class="icon"><i class="entypo-mail"></i></div>
@@ -484,8 +484,346 @@
                </div>
             </div>
             <br>
+            <div id="#celebrity" >
+            <h1>Celebrity</h1>
+            </div>
+            <hr>
+                        <h2>Celebrity Profile</h2>
+            <br/>
+            <div class="row">
+	       <div class="col-md-12">
+		
+		  <div class="panel panel-primary" data-collapsed="0">
+		
+			 <div class="panel-heading">
+				 <div class="panel-title">
+					Create Profile
+				 </div>
+				
+				 <div class="panel-options">
+					<a href="http://themes.laborator.co/neon/forms/main/#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+					<a href="http://themes.laborator.co/neon/forms/main/#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+					<a href="http://themes.laborator.co/neon/forms/main/#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+					<a href="http://themes.laborator.co/neon/forms/main/#" data-rel="close"><i class="entypo-cancel"></i></a>
+				 </div>
+			  </div>
+			
+			  <div class="panel-body">
+				
+				<form role="form" class="form-horizontal form-groups-bordered">
+	
+					<div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label">Celebrity Name</label>
+						
+						<div class="col-sm-5">
+							<input type="text" class="form-control" id="celeb_name" name="celebrity" placeholder="Celebrity">
+						</div>
+					</div>
+                                        <div class="form-group">
+                                                <label for="field-1" class="col-sm-3 control-label">Display Name</label>
 
-            
+                                                <div class="col-sm-5">
+                                                        <input type="text" class="form-control" id="celeb_name" name="celebrity" placeholder="Display Name">
+                                                </div>
+                                        </div>
+					<div class="form-group">
+						<label for="field-ta" class="col-sm-3 control-label">Description</label>
+						
+						<div class="col-sm-5">
+							<textarea class="form-control" id="field-ta" placeholder="Enter celebrity description"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Category</label>
+						
+						<div class="col-sm-5">
+							<select class="form-control">
+								<option>Movie</option>
+								<option>Sports</option>
+								<option>Politics</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-5">
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">Male
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Female
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-5">
+							<button type="submit" class="btn btn-default">Save</button>
+                                                        <button type="submit" class="btn btn-default">Reset</button>
+						</div>
+					</div>
+                                 </form>
+                         </div>
+                     </div>
+                  </div>
+             </div>
+            <div id="#celebrity" >
+            <h2>Upload Content</h2>
+            </div>
+            <br/>
+            <div class="row">
+               <div class="col-md-12">
+
+                  <div class="panel panel-primary" data-collapsed="0">
+
+                         <div class="panel-heading">
+                                 <div class="panel-title">
+                                        Upload Prompts
+                                 </div>
+
+                                 <div class="panel-options">
+                                        <a href="http://themes.laborator.co/neon/forms/main/#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+                                        <a href="http://themes.laborator.co/neon/forms/main/#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                                        <a href="http://themes.laborator.co/neon/forms/main/#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+                                        <a href="http://themes.laborator.co/neon/forms/main/#" data-rel="close"><i class="entypo-cancel"></i></a>
+                                 </div>
+                          </div>
+
+                          <div class="panel-body">
+
+                                <form role="form" class="form-horizontal form-groups-bordered">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Celebrities</label>
+						
+						<div class="col-sm-5">
+							<select class="form-control">
+								<option>Roger Federer</option>
+								<option>Sachin Tendulkar</option>
+								<option>Barac Obama</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label">Upload Prompt</label>
+						
+						<div class="col-sm-5">
+							<input type="file" class="form-control" id="field-file" placeholder="Placeholder">
+						</div>
+					</div>
+
+                                        <div class="form-group">
+                                                <div class="col-sm-offset-3 col-sm-5">
+                                                        <button type="submit" class="btn btn-default">Upload</button>
+                                                        <button type="submit" class="btn btn-default">Reset</button>
+                                                </div>
+                                        </div>
+                                 </form>
+                         </div>
+                     </div>
+                  </div>
+             </div>
+
+<h2>View/Edit Prompts</h2>
+<br/>
+                          <div class="panel-body">
+<form role="form" class="form-horizontal form-groups-bordered">
+                                        <div class="form-group">
+                                                <label class="col-sm-3 control-label">Celebrities</label>
+
+                                                <div class="col-sm-5">
+                                                        <select class="form-control">
+                                                                <option>Roger Federer</option>
+                                                                <option>Sachin Tendulkar</option>
+                                                                <option>Barac Obama</option>
+                                                        </select>
+                                                </div>
+                                        </div>
+</form>
+</div>
+<div id="table-2_wrapper" class="dataTables_wrapper form-inline" role="grid"><table class="table table-bordered table-striped datatable dataTable" id="table-2" aria-describedby="table-2_info">
+	<thead>
+		<tr role="row"><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="
+				
+					
+				
+			" style="width: 21px;">
+				<div class="checkbox checkbox-replace neon-cb-replacement">
+					<label class="cb-wrapper"><input type="checkbox" id="chk-1"><div class="checked"></div></label>
+				</div>
+			</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="table-2" rowspan="1" colspan="1" aria-label="Student Name: activate to sort column ascending" style="width: 204px;">Prompts</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="table-2" rowspan="1" colspan="1" aria-label="Average Grade: activate to sort column ascending" style="width: 108px;">Scheduled Time</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="table-2" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 282px;">Actions</th></tr>
+	</thead>
+	
+	
+<tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd">
+			<td class=" sorting_1">
+				<div class="checkbox checkbox-replace neon-cb-replacement">
+					<label class="cb-wrapper"><input type="checkbox" id="chk-1"><div class="checked"></div></label>
+				</div>
+			</td>
+			<td class=" "><a href="#">welcome.mp3</a></td>
+			<td class=" ">dd/mm/yyyy</td>
+			<td class=" ">
+				<a href="http://themes.laborator.co/neon/tables/datatable/#" class="btn btn-default btn-sm btn-icon icon-left">
+					<i class="entypo-pencil"></i>
+					Edit
+				</a>
+				
+				<a href="http://themes.laborator.co/neon/tables/datatable/#" class="btn btn-danger btn-sm btn-icon icon-left">
+					<i class="entypo-cancel"></i>
+					Delete
+				</a>
+			</td>
+		</tr>
+	        </tbody></table><div class="row"><div class="col-xs-6 col-left"><div class="dataTables_info" id="table-2_info">Showing 1 to 8 of 12 entries</div></div><div class="col-xs-6 col-right"><div class="dataTables_paginate paging_bootstrap"><ul class="pagination pagination-sm"><li class="prev disabled"><a href="http://themes.laborator.co/neon/tables/datatable/#"><i class="entypo-left-open"></i></a></li><li class="active"><a href="http://themes.laborator.co/neon/tables/datatable/#">1</a></li><li><a href="http://themes.laborator.co/neon/tables/datatable/#">2</a></li><li class="next"><a href="http://themes.laborator.co/neon/tables/datatable/#"><i class="entypo-right-open"></i></a></li></ul></div></div></div></div>
+
+
+<script type="text/javascript">
+jQuery(window).load(function()
+{
+	$("#table-2").dataTable({
+		"sPaginationType": "bootstrap",
+		"sDom": "t<'row'<'col-xs-6 col-left'i><'col-xs-6 col-right'p>>",
+		"bStateSave": false,
+		"iDisplayLength": 8,
+		"aoColumns": [
+			{ "bSortable": false },
+			null,
+			null,
+			null,
+			null
+		]
+	});
+	
+	$(".dataTables_wrapper select").select2({
+		minimumResultsForSearch: -1
+	});
+	
+	// Highlighted rows
+	$("#table-2 tbody input[type=checkbox]").each(function(i, el)
+	{
+		var $this = $(el),
+			$p = $this.closest('tr');
+		
+		$(el).on('change', function()
+		{
+			var is_checked = $this.is(':checked');
+			
+			$p[is_checked ? 'addClass' : 'removeClass']('highlight');
+		});
+	});
+	
+	// Replace Checboxes
+	$(".pagination a").click(function(ev)
+	{
+		replaceCheckboxes();
+	});
+});
+	
+// Sample Function to add new row
+var giCount = 1;
+
+function fnClickAddRow() 
+{
+	$('#table-2').dataTable().fnAddData(['<div class="checkbox checkbox-replace"><input type="checkbox" /></div>', giCount+".2", giCount+".3", giCount+".4", giCount+".5" ]);
+	
+	replaceCheckboxes(); // because there is checkbox, replace it
+	
+	giCount++;
+}
+</script>
+
+
+
+<br>
+<br>
+<div id="#user" >
+<h1> Users/Followers</h1>
+</div>
+<hr>
+<h2>View/Edit Users/Followers</h2>
+<br/>
+                          <div class="panel-body">
+<form role="form" class="form-horizontal form-groups-bordered">
+                                        <div class="form-group">
+                                                <label class="col-sm-3 control-label">Celebrities</label>
+
+                                                <div class="col-sm-5">
+                                                        <select class="form-control">
+                                                                <option>Roger Federer</option>
+                                                                <option>Sachin Tendulkar</option>
+                                                                <option>Barac Obama</option>
+                                                        </select>
+                                                </div>
+                                        </div>
+</form>
+</div>
+<div id="table-2_wrapper" class="dataTables_wrapper form-inline" role="grid"><table class="table table-bordered table-striped datatable dataTable" id="table-2" aria-describedby="table-2_info">
+        <thead>
+                <tr role="row"><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="
+                                
+                                        
+                                
+                        " style="width: 21px;">
+                                <div class="checkbox checkbox-replace neon-cb-replacement">
+                                        <label class="cb-wrapper"><input type="checkbox" id="chk-1"><div class="checked"></div></label>
+                                </div>
+                        </th><th class="sorting" role="columnheader" tabindex="0" aria-controls="table-2" rowspan="1" colspan="1" aria-label="Student Name: activate to sort column ascending" style="width: 204px;">Users</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="table-2" rowspan="1" colspan="1" aria-label="Average Grade: activate to sort column ascending" style="width: 108px;">Status</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="table-2" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 282px;">Actions</th></tr>
+        </thead>
+
+<tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd">
+                        <td class=" sorting_1">
+                                <div class="checkbox checkbox-replace neon-cb-replacement">
+                                        <label class="cb-wrapper"><input type="checkbox" id="chk-1"><div class="checked"></div></label>
+                                </div>
+                        </td>
+                        <td class=" ">I Asimov</td>
+                        <td class=" ">Active</td>
+                        <td class=" ">
+                                <a href="http://themes.laborator.co/neon/tables/datatable/#" class="btn btn-default btn-sm btn-icon icon-left">
+                                        <i class="entypo-pencil"></i>
+                                        Edit
+                                </a>
+
+                                <a href="http://themes.laborator.co/neon/tables/datatable/#" class="btn btn-danger btn-sm btn-icon icon-left">
+                                        <i class="entypo-cancel"></i>
+                                        Delete
+                                </a>
+				<a href="http://themes.laborator.co/neon/tables/datatable/#" class="btn btn-info btn-sm btn-icon icon-left">
+					<i class="entypo-info"></i>
+					Profile
+				</a>
+                        </td>
+                </tr>
+                <tr class="even">
+                        <td class=" sorting_1">
+                                <div class="checkbox checkbox-replace neon-cb-replacement">
+                                        <label class="cb-wrapper"><input type="checkbox" id="chk-1"><div class="checked"></div></label>
+                                </div>
+                        </td>
+                        <td class=" ">Zakir Khan</td>
+                        <td class=" ">Suspended</td>
+                        <td class=" ">
+                                <a href="http://themes.laborator.co/neon/tables/datatable/#" class="btn btn-default btn-sm btn-icon icon-left">
+                                        <i class="entypo-pencil"></i>
+                                        Edit
+                                </a>
+
+                                <a href="http://themes.laborator.co/neon/tables/datatable/#" class="btn btn-danger btn-sm btn-icon icon-left">
+                                        <i class="entypo-cancel"></i>
+                                        Delete
+                                </a>
+				<a href="http://themes.laborator.co/neon/tables/datatable/#" class="btn btn-info btn-sm btn-icon icon-left">
+					<i class="entypo-info"></i>
+					Profile
+				</a>
+                        </td>
+                </tr>
+                </tbody></table><div class="row"><div class="col-xs-6 col-left"><div class="dataTables_info" id="table-2_info">Showing 1 to 8 of 12 entries</div></div><div class="col-xs-6 col-right"><div class="dataTables_paginate paging_bootstrap"><ul class="pagination pagination-sm"><li class="prev disabled"><a href="http://themes.laborator.co/neon/tables/datatable/#"><i class="entypo-left-open"></i></a></li><li class="active"><a href="http://themes.laborator.co/neon/tables/datatable/#">1</a></li><li><a href="http://themes.laborator.co/neon/tables/datatable/#">2</a></li><li class="next"><a href="http://themes.laborator.co/neon/tables/datatable/#"><i class="entypo-right-open"></i></a></li></ul></div></div></div></div>
+
                         <!-- Footer -->
             <footer class="main">
                <div class="pull-right">
@@ -494,190 +832,6 @@
                © 2014 <strong>Voice Tweet</strong> product by <a href="#" target="_blank">Ultivoz</a>
             </footer>
          </div>
-         <div id="chat" class="fixed" data-current-user="Art Ramadani" data-order-by-status="1" data-max-chat-history="25" style="min-height: 1416px;">
-            <div class="chat-inner" style="overflow: hidden; outline: none;" tabindex="5000">
-               <h2 class="chat-header">
-                  <a href="http://themes.laborator.co/neon/#" class="chat-close" data-animate="1"><i class="entypo-cancel"></i></a>
-                  <i class="entypo-users"></i>
-                  Chat
-                  <span class="badge badge-success">3</span>
-               </h2>
-               <div class="chat-group" id="group-1">
-                  <strong>Favorites</strong>
-                  <a href="http://themes.laborator.co/neon/#" id="sample-user-123" data-conversation-history="#sample_history"><span class="user-status is-online"></span> <em>Catherine J. Watkins</em><span class="badge badge-info">1</span></a><a href="http://themes.laborator.co/neon/#" id="ui-id-1"><span class="user-status is-online"></span> <em>Nicholas R. Walker</em><span class="badge badge-info is-hidden">0</span></a><a href="http://themes.laborator.co/neon/#" id="ui-id-2"><span class="user-status is-busy"></span> <em>Susan J. Best</em><span class="badge badge-info is-hidden">0</span></a><a href="http://themes.laborator.co/neon/#" id="ui-id-4"><span class="user-status is-idle"></span> <em>Fernando G. Olson</em><span class="badge badge-info is-hidden">0</span></a><a href="http://themes.laborator.co/neon/#" id="ui-id-3"><span class="user-status is-offline"></span> <em>Brandon S. Young</em><span class="badge badge-info is-hidden">0</span></a>
-               </div>
-               <div class="chat-group" id="group-2">
-                  <strong>Work</strong>
-                  <a href="http://themes.laborator.co/neon/#" id="ui-id-7"><span class="user-status is-busy"></span> <em>Rodrigo E. Lozano</em><span class="badge badge-info is-hidden">0</span></a><a href="http://themes.laborator.co/neon/#" id="ui-id-5"><span class="user-status is-offline"></span> <em>Robert J. Garcia</em><span class="badge badge-info is-hidden">0</span></a><a href="http://themes.laborator.co/neon/#" data-conversation-history="#sample_history_2" id="ui-id-6"><span class="user-status is-offline"></span> <em>Daniel A. Pena</em><span class="badge badge-info">2</span></a>
-               </div>
-               <div class="chat-group" id="group-3">
-                  <strong>Social</strong>
-                  <a href="http://themes.laborator.co/neon/#" id="ui-id-10"><span class="user-status is-online"></span> <em>Kathleen M. Canales</em><span class="badge badge-info is-hidden">0</span></a><a href="http://themes.laborator.co/neon/#" id="ui-id-8"><span class="user-status is-busy"></span> <em>Velma G. Pearson</em><span class="badge badge-info is-hidden">0</span></a><a href="http://themes.laborator.co/neon/#" id="ui-id-9"><span class="user-status is-offline"></span> <em>Margaret R. Dedmon</em><span class="badge badge-info is-hidden">0</span></a><a href="http://themes.laborator.co/neon/#" id="ui-id-11"><span class="user-status is-offline"></span> <em>Tracy J. Rodriguez</em><span class="badge badge-info is-hidden">0</span></a>
-               </div>
-            </div>
-            <!-- conversation template -->
-            <div class="chat-conversation">
-               <div class="conversation-header">
-                  <a href="http://themes.laborator.co/neon/#" class="conversation-close"><i class="entypo-cancel"></i></a>
-                  <span class="user-status"></span>
-                  <span class="display-name"></span> 
-                  <small></small>
-               </div>
-               <ul class="conversation-body">	
-               </ul>
-               <div class="chat-textarea">
-                  <textarea class="form-control autogrow" placeholder="Type your message" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 32px;"></textarea>
-               </div>
-            </div>
-            <div id="ascrail2000" class="nicescroll-rails" style="padding-right: 3px; width: 10px; z-index: 5; cursor: default; position: absolute; top: 0px; left: -10px; height: 100px; display: none;">
-               <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(69, 74, 84); border: 1px solid rgb(69, 74, 84); background-clip: padding-box; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px;"></div>
-            </div>
-            <div id="ascrail2000-hr" class="nicescroll-rails" style="height: 7px; z-index: 5; top: 93px; left: 0px; position: absolute; cursor: default; display: none;">
-               <div style="position: relative; top: 0px; height: 5px; width: 0px; background-color: rgb(69, 74, 84); border: 1px solid rgb(69, 74, 84); background-clip: padding-box; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px;"></div>
-            </div>
-         </div>
-         <!-- Chat Histories -->
-         <ul class="chat-history" id="sample_history">
-            <li>
-               <span class="user">Art Ramadani</span>
-               <p>Are you here?</p>
-               <span class="time">09:00</span>
-            </li>
-            <li class="opponent">
-               <span class="user">Catherine J. Watkins</span>
-               <p>This message is pre-queued.</p>
-               <span class="time">09:25</span>
-            </li>
-            <li class="opponent">
-               <span class="user">Catherine J. Watkins</span>
-               <p>Whohoo!</p>
-               <span class="time">09:26</span>
-            </li>
-            <li class="opponent unread">
-               <span class="user">Catherine J. Watkins</span>
-               <p>Do you like it?</p>
-               <span class="time">09:27</span>
-            </li>
-         </ul>
-         <!-- Chat Histories -->
-         <ul class="chat-history" id="sample_history_2">
-            <li class="opponent unread">
-               <span class="user">Daniel A. Pena</span>
-               <p>I am going out.</p>
-               <span class="time">08:21</span>
-            </li>
-            <li class="opponent unread">
-               <span class="user">Daniel A. Pena</span>
-               <p>Call me when you see this message.</p>
-               <span class="time">08:27</span>
-            </li>
-         </ul>
-         <script type="text/javascript">
-            jQuery(document).ready(function($)
-            {
-            	var $cssda_badge = $(".cssda-nominee");
-            	
-            	var watcher = scrollMonitor.create($(".logo-env")[0], {top: 100});
-            	
-            	watcher.exitViewport(function()
-            	{
-            		$cssda_badge.addClass('visible');
-            	});
-            	
-            	watcher.enterViewport(function()
-            	{
-            		$cssda_badge.removeClass('visible');
-            	});
-            });
-         </script>
-         <style>
-            /* CSS Design Awards Nominee Badge */
-            .cssda-nominee {
-            position: fixed;
-            right: 0;
-            top: 30px;
-            z-index: 1000;
-            -webkit-opacity: 0;
-            -moz-opacity: 0;
-            opacity: 0;
-            -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-            filter: alpha(opacity=0);
-            -webkit-transition: all 300ms ease-in-out;
-            -moz-transition: all 300ms ease-in-out;
-            -o-transition: all 300ms ease-in-out;
-            transition: all 300ms ease-in-out;
-            }
-            .cssda-nominee.visible {
-            -webkit-opacity: 1;
-            -moz-opacity: 1;
-            opacity: 1;
-            -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-            filter: alpha(opacity=100);
-            }
-            .chat-visible .cssda-nominee {
-            display: none;
-            }
-            @media screen and (max-width: 779px) {
-            .cssda-nominee {
-            display: none;
-            }
-            }
-         </style>
-      </div>
-      <!-- Sample Modal (Default skin) -->
-      <div class="modal fade" id="sample-modal-dialog-1">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                  <h4 class="modal-title">Widget Options - Default Modal</h4>
-               </div>
-               <div class="modal-body">
-                  <p>Now residence dashwoods she excellent you. Shade being under his bed her. Much read on as draw. Blessing for ignorant exercise any yourself unpacked. Pleasant horrible but confined day end marriage. Eagerness furniture set preserved far recommend. Did even but nor are most gave hope. Secure active living depend son repair day ladies now.</p>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- Sample Modal (Skin inverted) -->
-      <div class="modal invert fade" id="sample-modal-dialog-2">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                  <h4 class="modal-title">Widget Options - Inverted Skin Modal</h4>
-               </div>
-               <div class="modal-body">
-                  <p>Now residence dashwoods she excellent you. Shade being under his bed her. Much read on as draw. Blessing for ignorant exercise any yourself unpacked. Pleasant horrible but confined day end marriage. Eagerness furniture set preserved far recommend. Did even but nor are most gave hope. Secure active living depend son repair day ladies now.</p>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- Sample Modal (Skin gray) -->
-      <div class="modal gray fade" id="sample-modal-dialog-3">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                  <h4 class="modal-title">Widget Options - Gray Skin Modal</h4>
-               </div>
-               <div class="modal-body">
-                  <p>Now residence dashwoods she excellent you. Shade being under his bed her. Much read on as draw. Blessing for ignorant exercise any yourself unpacked. Pleasant horrible but confined day end marriage. Eagerness furniture set preserved far recommend. Did even but nor are most gave hope. Secure active living depend son repair day ladies now.</p>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-               </div>
-            </div>
-         </div>
-      </div>
       <link rel="stylesheet" href="http://themes.laborator.co/neon/assets/js/jvectormap/jquery-jvectormap-1.2.2.css" id="style-resource-1">
       <link rel="stylesheet" href="http://themes.laborator.co/neon/assets/js/rickshaw/rickshaw.min.css" id="style-resource-2">
       <script src="{{STATIC_URL}}ct/js/main-gsap.js" id="script-resource-1"></script>
